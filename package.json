@@ -1,0 +1,65 @@
+{
+  "name": "@lambda-lego/chapter-1",
+  "version": "1.0.0",
+  "description": "Simple Serverless API",
+  "repository": "https://github.com/brianfoody/lambda-lego-1.git",
+  "author": "Brian Foody <https://github.com/brianfoody",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "script": "ts-node -O '{\"module\": \"commonjs\"}'",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --collectCoverage true",
+    "deploy": "cdk deploy --require-approval never"
+  },
+  "dependencies": {
+    "@aws/dynamodb-data-mapper": "~0.7.3",
+    "@aws/dynamodb-data-mapper-annotations": "~0.7.3",
+    "aws-lambda": "~1.0.5",
+    "aws-sdk": "^2.602.0",
+    "uuid": "~3.3.3"
+  },
+  "devDependencies": {
+    "@aws-cdk/aws-apigateway": "^1.20.0",
+    "@aws-cdk/aws-dynamodb": "~1.20.0",
+    "@aws-cdk/aws-iam": "^1.20.0",
+    "@aws-cdk/aws-lambda": "^1.20.0",
+    "@aws-cdk/aws-s3": "~1.20.0",
+    "@aws-cdk/aws-s3-deployment": "~1.20.0",
+    "@aws-cdk/core": "^1.20.0",
+    "@types/aws-lambda": "~8.10.39",
+    "@types/jest": "^24.0.25",
+    "@types/node": "~13.1.6",
+    "@types/uuid": "~3.4.6",
+    "aws-cdk": "~1.20.0",
+    "aws-sdk-mock": "^5.0.0",
+    "jest": "^24.9.0",
+    "source-map-support": "^0.5.16",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "jest": {
+    "rootDir": "./",
+    "testMatch": [
+      "<rootDir>/src/**/*.test.ts"
+    ],
+    "transform": {
+      "^.+\\.ts?$": "<rootDir>/node_modules/ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "globalSetup": "./testSetup.ts",
+    "testEnvironment": "node"
+  }
+}
