@@ -44,7 +44,17 @@ jobs:
 
       - run:
           name: Building deployment artifacts
-          command: npm run build
+          command: |
+            npm run build
+
+            # Build layers
+            mv node_modules node_modules_bak
+
+            npm install --production
+
+            mkdir -p lib/layers/nodejs
+            mv node_modules lib/layers/nodejs
+            mv node_modules_bak node_modules
 
       - run:
           name: Configure AWS
