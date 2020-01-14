@@ -42,7 +42,7 @@ export class ServerResources extends Construct {
     // API
     const api = new RestApi(this, "WebApi");
 
-    const resource = api.root.addResource("/contact");
+    const resource = api.root.addResource("contact");
     resource.addMethod(
       "POST",
       new LambdaIntegration(handler, {
