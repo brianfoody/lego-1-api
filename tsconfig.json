@@ -8,6 +8,7 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "noImplicitThis": true,
+    "emitDecoratorMetadata": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": false,

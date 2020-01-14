@@ -30,7 +30,7 @@
     "@aws-cdk/aws-s3-deployment": "~1.20.0",
     "@aws-cdk/core": "^1.20.0",
     "@types/aws-lambda": "~8.10.39",
-    "@types/jest": "^24.0.25",
+    "@types/jest": "~24.0.25",
     "@types/node": "~13.1.6",
     "@types/uuid": "~3.4.6",
     "aws-cdk": "~1.20.0",
