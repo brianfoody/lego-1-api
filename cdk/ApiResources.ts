@@ -1,7 +1,7 @@
 import { Function, Runtime, Code, LayerVersion } from "@aws-cdk/aws-lambda";
 import { RestApi, LambdaIntegration } from "@aws-cdk/aws-apigateway";
 import { AttributeType, Table, BillingMode } from "@aws-cdk/aws-dynamodb";
-import { Construct, RemovalPolicy } from "@aws-cdk/core";
+import { Construct, RemovalPolicy, CfnOutput } from "@aws-cdk/core";
 
 export class ApiResources extends Construct {
   constructor(parent: Construct, name: string) {
@@ -49,5 +49,9 @@ export class ApiResources extends Construct {
         allowTestInvoke: false
       })
     );
+
+    new CfnOutput(this, "ApiUrl", {
+      value: api.url
+    });
   }
 }
