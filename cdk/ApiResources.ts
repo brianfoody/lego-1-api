@@ -29,7 +29,7 @@ export class ApiResources extends Construct {
       description: "Library layers."
     });
 
-    const handler = new Function(this, "EventHandler", {
+    const contactUsHandler = new Function(this, "ContactUsHandler", {
       runtime: Runtime.NODEJS_10_X,
       code: Code.asset("./lib/src"),
       handler: "contactUs/post.main",
@@ -40,13 +40,15 @@ export class ApiResources extends Construct {
       }
     });
 
+    contactUsTable.grantReadWriteData(contactUsHandler);
+
     // API
     const api = new RestApi(this, "WebApi");
 
     const resource = api.root.addResource("contact");
     resource.addMethod(
       "POST",
-      new LambdaIntegration(handler, {
+      new LambdaIntegration(contactUsHandler, {
         allowTestInvoke: false
       })
     );
