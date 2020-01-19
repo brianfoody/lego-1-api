@@ -36,7 +36,9 @@ export class ContactUsRepo {
   ) {}
 
   async save(request: ContactUsRequest) {
-    return await this.mapper.put(contactUsModel({ id: uuid(), ...request }));
+    return await this.mapper.put(
+      contactUsModel({ ...request, id: uuid(), contactedAt: +new Date() })
+    );
   }
 }
 
