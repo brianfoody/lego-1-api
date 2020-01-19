@@ -15,5 +15,11 @@ export const handler = async (event: APIGatewayEvent, repo: ContactUsRepo) => {
 
   await repo.save(JSON.parse(event.body));
 
-  return { statusCode: 200 };
+  return {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "my-origin.com"
+    },
+    body: JSON.stringify({ message: "okay" })
+  };
 };
