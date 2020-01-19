@@ -37,7 +37,8 @@ export class ApiResources extends Construct {
       memorySize: 256,
       environment: {
         CONTACT_US_TABLE_NAME: contactUsTable.tableName
-      }
+      },
+      reservedConcurrentExecutions: 1 // Just for demo version, remove in your code.
     });
 
     contactUsTable.grantReadWriteData(contactUsHandler);
