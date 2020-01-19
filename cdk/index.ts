@@ -10,6 +10,6 @@ export class ServiceStack extends Stack {
 
 const app = new App();
 
-new ServiceStack(app, "ApiStack");
+new ServiceStack(app, "LambdaLego1ApiStack");
 
 app.synth();

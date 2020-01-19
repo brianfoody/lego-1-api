@@ -34,6 +34,7 @@ export class ApiResources extends Construct {
       code: Code.asset("./lib/src"),
       handler: "contactUs/post.main",
       layers: [layer],
+      memorySize: 256,
       environment: {
         CONTACT_US_TABLE_NAME: contactUsTable.tableName
       }
