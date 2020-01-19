@@ -3,7 +3,7 @@ import { RestApi, LambdaIntegration } from "@aws-cdk/aws-apigateway";
 import { AttributeType, Table, BillingMode } from "@aws-cdk/aws-dynamodb";
 import { Construct, RemovalPolicy } from "@aws-cdk/core";
 
-export class ServerResources extends Construct {
+export class ApiResources extends Construct {
   constructor(parent: Construct, name: string) {
     super(parent, name);
 

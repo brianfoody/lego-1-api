@@ -1,10 +1,10 @@
 import { Stack, App, StackProps } from "@aws-cdk/core";
-import { ServerResources } from "./ServerResources";
+import { ApiResources } from "./ApiResources";
 
 export class ServiceStack extends Stack {
   constructor(scope: App, id: string, props?: StackProps) {
     super(scope, id, props);
-    new ServerResources(this, "API");
+    new ApiResources(this, "API");
   }
 }
 
