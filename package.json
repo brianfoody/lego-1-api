@@ -9,7 +9,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc"
-    "build": "cdk boostrap",
+    "bootstrap": "cdk bootstrap",
     "script": "ts-node -O '{\"module\": \"commonjs\"}'",
     "test": "jest --runInBand",
     "test:coverage": "jest --collectCoverage true",
